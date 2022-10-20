@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+
+
+let obj = {
+
+"Name": "Guru Prasad",
+"age": 26
+}
+
+let obj1={
+"age":26,
+"Name":"Guru Prasad"
+}
+
+
+console.log(obj == obj1) 
+console.log()
+
+
+
+
+let guru = new XMLHttpRequest()
+guru.open("GET","https://restcountries.com/v3.1/all")
+guru.send()
+
+guru.responseType = "json"
+
+guru.onload = function(){
+
+    const Countries = guru.response;
+    console.log(Countries)
+   
+    console.log("No of countries " ,  Countries.length)
+
+for(let index in Countries){
+    // console.log("Name of countries " ,  Countries.name)
+    // console.log(+index +1 ,Countries[index])
+console.log(+index + 1,"Country Name:",Countries[index].name.common)
+console.log(Countries[index].name.official)
+console.log("flags:",Countries[index].flags.svg)
+
+console.log("region :",Countries[index].region)
+console.log("subregion :",Countries[index].subregion)
+console.log("population :",Countries[index].population)
+
+
+
+
+}
+}
+
+    </script>
+</body>
+</html>
